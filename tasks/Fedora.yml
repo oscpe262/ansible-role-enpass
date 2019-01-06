@@ -1,0 +1,28 @@
+## roles/ansible-role-saltstack/tasks/default.yml
+# vim:ft=ansible:
+---
+- name: Add Enpass Repo
+  yum_repository:
+    name: "enpass-yum"
+    description: "Enpass password manager repository"
+    baseurl: "https://yum.enpass.io/stable/$basearch/"
+    gpgcheck: yes
+    gpgkey: "https://yum.enpass.io/RPM-GPG-KEY-enpass-signing-key"
+    enabled: yes
+
+- name: Add Enpass Testing Repo
+  yum_repository:
+    name: "enpass-yum"
+    description: "Enpass password manager repository"
+    baseurl: "https://yum.enpass.io/testing/$basearch/"
+    gpgcheck: yes
+    gpgkey: "https://yum.enpass.io/RPM-GPG-KEY-enpass-signing-key"
+    enabled: no
+
+- name: Install Enpass
+  dnf:
+    name: "enpass"
+    state: "present"
+
+...
+

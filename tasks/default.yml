@@ -1,0 +1,7 @@
+## roles/ansible-role-saltstack/tasks/default.yml
+# vim:ft=ansible:
+---
+- debug:
+    msg: "Your current distribution is not supported by this role."
+...
+

@@ -1,0 +1,11 @@
+## roles/ansible-role-enpass/tasks/main.yml
+# vim:ft=ansible:
+---
+- include_tasks: "{{ enpass_distro_include }}.yml"
+  with_first_found:
+    - "{{ ansible_distribution }}"
+    - "{{ ansible_os_family }}"
+    - "{{ default }}"
+  loop_control:
+    loop_var: enpass_distro_include
+...

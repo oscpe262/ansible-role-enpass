@@ -1,0 +1,4 @@
+## roles/ansible-role-enpass/defaults/main.yml
+# vim:ft=ansible:
+---
+...
